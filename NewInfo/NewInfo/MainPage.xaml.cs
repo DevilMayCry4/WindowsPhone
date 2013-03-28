@@ -17,13 +17,43 @@ namespace NewInfo
         public MainPage()
         {
             InitializeComponent();
-            Button button = new Button();
-
-            ContentPanel.Children.Add(button);
+      
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
         }
 
+        private void begin()
+        {
+            Uri url = new Uri("http://yts0.hkinfohub.kr3.yahoo.com/v0/m/news?channel=1");
+            WebClient webClient = new WebClient();
+            webClient.OpenReadAsync(url);              //在不阻止调用线程的情况下，从资源返回数据
+            webClient.OpenReadCompleted += new OpenReadCompletedEventHandler(complete);
+            
+        }
+        private void complete(Object sender, OpenReadCompletedEventArgs e)
+        {
+            if (e.Error == null)
+            {
+                using (System.IO.StreamReader reader = new System.IO.StreamReader(e.Result))
+                {
+                    string strStream = reader.ReadToEnd();
+                    // string subString = Utf8ToGB2312(strStream);
+
+ 
+                    MessageBox.Show("下载成功\n" + strStream);
+                    
+
+
+
+
+                    //    progress1.Visibility = Visibility.Collapsed;
+                }
+            }
+            else
+            {
+                MessageBox.Show(e.Error.Message);
+            }
+        }
         // Sample code for building a localized ApplicationBar
         //private void BuildLocalizedApplicationBar()
         //{
