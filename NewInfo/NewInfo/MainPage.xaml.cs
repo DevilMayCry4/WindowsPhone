@@ -17,7 +17,9 @@ namespace NewInfo
         public MainPage()
         {
             InitializeComponent();
+            Button button = new Button();
 
+            ContentPanel.Children.Add(button);
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
         }
