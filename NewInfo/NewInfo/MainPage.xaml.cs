@@ -17,6 +17,7 @@ namespace NewInfo
         public MainPage()
         {
             InitializeComponent();
+            begin();
       
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
@@ -39,12 +40,9 @@ namespace NewInfo
                     string strStream = reader.ReadToEnd();
                     // string subString = Utf8ToGB2312(strStream);
 
- 
+                    progressBar.Visibility = Visibility.Collapsed;
                     MessageBox.Show("下载成功\n" + strStream);
-                    
-
-
-
+   
 
                     //    progress1.Visibility = Visibility.Collapsed;
                 }

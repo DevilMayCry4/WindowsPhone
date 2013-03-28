@@ -13,7 +13,7 @@
     SupportedOrientations="Portrait" Orientation="Portrait"
     shell:SystemTray.IsVisible="True">
     <Canvas Name="BackCanvas" Background="Wheat">
-        <ProgressBar Width="480" Height="30" Canvas.Top="400" IsIndeterminate="True" >
+        <ProgressBar Name="progressBar" Width="480" Height="30" Canvas.Top="400" IsIndeterminate="True" >
             
         </ProgressBar>
     </Canvas>
