@@ -16,3 +16,4 @@ C:\Users\virgil\Documents\GitHub\WindowsPhone\NewInfo\NewInfo\obj\Debug\NewInfo.
 C:\Users\virgil\Documents\GitHub\WindowsPhone\NewInfo\NewInfo\obj\Debug\NewInfo.dll
 C:\Users\virgil\Documents\GitHub\WindowsPhone\NewInfo\NewInfo\obj\Debug\NewInfo.pdb
 C:\Users\virgil\Documents\GitHub\WindowsPhone\NewInfo\NewInfo\obj\Debug\XapCacheFile.xml
+C:\Users\virgil\Documents\GitHub\WindowsPhone\NewInfo\NewInfo\obj\Debug\DetailPage.g.cs

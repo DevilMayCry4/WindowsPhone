@@ -16,6 +16,9 @@
         <ProgressBar Name="progressBar" Width="480" Height="30" Canvas.Top="400" IsIndeterminate="True" >
             
         </ProgressBar>
+        <Button Content="Button" Canvas.Left="184" Canvas.Top="379" Click="Button_Click_1"/>
+
+
     </Canvas>
             <!--LayoutRoot is the root grid where all page content is placed-->
 
