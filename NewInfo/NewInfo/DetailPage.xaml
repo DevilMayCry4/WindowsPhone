@@ -12,24 +12,15 @@
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True">
+    <Canvas HorizontalAlignment="Left" Height="768" VerticalAlignment="Top" Width="480">
+        <Image Name="image" Height="236" Canvas.Left="140" Canvas.Top="50" Width="170"/>
+        <TextBlock Name="titleBlock" FontSize="30" TextWrapping="Wrap" Text="TextBlock" Height="50" Width="460" Canvas.Left="10"/>
+        <ScrollViewer Height="482" Canvas.Top="286" Width="480">
+            <TextBlock  Name="descBlock" TextWrapping="Wrap"  FontSize="25" Text="TextBlock" Width="449"/>
+        </ScrollViewer>
+    </Canvas>
+
 
     <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-
-        <!--TitlePanel contains the name of the application and page title-->
-        <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock Text="page name" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
-        </StackPanel>
-
-        <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-
-        </Grid>
-    </Grid>
 
 </phone:PhoneApplicationPage>

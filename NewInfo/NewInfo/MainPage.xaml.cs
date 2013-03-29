@@ -12,15 +12,11 @@ using System.Xml.Linq;
 using System.Windows.Media.Imaging;
 using System.Threading;
 using System.Windows.Media;
+using NewInfo;
 
 namespace NewInfo
 {
-    public class Info
-    {
-        public string imageURI;
-        public string title;
-        public string desc;
-    }
+    
     public partial class MainPage : PhoneApplicationPage
     {
         List<Info> list;
@@ -156,13 +152,9 @@ namespace NewInfo
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-           /* int tag = (int)((Button)sender).Tag;
-            Info info = list[tag];
-            MessageBox.Show(info.desc);*/
-             
+            int tag = (int)((Button)sender).Tag;
+            PhoneApplicationService.Current.State["info"] = list[tag];
             NavigationService.Navigate(new Uri("/DetailPage.xaml", UriKind.Relative));
-
-
         }
     }
 }
