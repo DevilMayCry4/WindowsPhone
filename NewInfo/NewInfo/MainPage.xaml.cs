@@ -67,7 +67,7 @@ namespace NewInfo
                         ListBox listBox = new ListBox();
                         Content = listBox;
                         
-                        
+                        listBox.SelectionChanged +=listBox_SelectionChanged;
 
 
                         XElement element = XElement.Parse(strStream);
@@ -88,7 +88,9 @@ namespace NewInfo
                                 Image image = new Image();
                                 double imageWidth =  100;
                                 double imageHeight = 100;
-
+                                image.Source = new BitmapImage(new Uri((imageElement.Element("url").Value)));
+                          
+                                
                                 Button button = new Button();
                                 button.Width = imageWidth;
                                 button.Height = imageHeight;
@@ -97,8 +99,8 @@ namespace NewInfo
                                 button.Click +=button_Click;
                                 Canvas.SetLeft(button, 10);
                                 Canvas.SetTop(button,10);
-                                canvas.Children.Add(button);
-                             
+                                canvas.Children.Add(image);
+                                
 
                                 image.Width = imageWidth;
                                 image.Height = imageHeight;
@@ -110,7 +112,7 @@ namespace NewInfo
                                 TextBlock textBlock = new TextBlock();
                                 textBlock.Width = imageWidth;
                                 textBlock.Height = 40;
-                                textBlock.Width =  480 - 120;
+                                textBlock.Width = 480 - 120;
                                 Debug.WriteLine("{0}",textBlock.Width);
                                 textBlock.Foreground = brush;
                                 textBlock.VerticalAlignment = VerticalAlignment.Center;
@@ -155,6 +157,17 @@ namespace NewInfo
             progressBar.Visibility = Visibility.Visible;
             this.begin();
       
+        }
+
+        private void listBox_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+
+            Debug.WriteLine("{0}", (sender as ListBox).SelectedIndex);
+            int tag = (sender as ListBox).SelectedIndex;
+            (Application.Current as App).info = list[tag];
+
+
+            NavigationService.Navigate(new Uri("/DetailPage.xaml", UriKind.Relative));
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
