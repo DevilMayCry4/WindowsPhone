@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace NewInfo
 {
-    class Info
+   public class Info
     {
         public string imageURI;
         public string title;
         public string desc;
+     
     }
 }

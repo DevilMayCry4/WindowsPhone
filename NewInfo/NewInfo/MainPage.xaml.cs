@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Threading;
 using System.Windows.Media;
 using NewInfo;
+using System.Diagnostics;
 
 namespace NewInfo
 {
@@ -27,6 +28,7 @@ namespace NewInfo
             InitializeComponent();
 
             progressBar.Visibility = Visibility.Collapsed;
+             
 
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
@@ -36,6 +38,7 @@ namespace NewInfo
 
         private void begin()
         {
+            Debug.WriteLine("begin");
             Uri url = new Uri("http://yts0.hkinfohub.kr3.yahoo.com/v0/m/news?channel=1");
             WebClient webClient = new WebClient();
             webClient.OpenReadAsync(url);              
@@ -46,27 +49,45 @@ namespace NewInfo
         {
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
+               
+
+               
                 list = new List<Info>();
 
                 if (e.Error == null)
                 {
                     using (System.IO.StreamReader reader = new System.IO.StreamReader(e.Result))
                     {
+                        
+                        
+                         
+                         
                         string strStream = reader.ReadToEnd();
                         progressBar.Visibility = Visibility.Collapsed;
+                        ListBox listBox = new ListBox();
+                        Content = listBox;
+                        
+                        
+
+
                         XElement element = XElement.Parse(strStream);
                         int count = 0;
                         foreach (XElement item in element.Elements("item"))
                         {
-                            if (count < 9)
-                            {
+                            Canvas canvas = new Canvas();
+                            canvas.Height = 120;
+                            ListBoxItem listItem = new ListBoxItem();
+                            listItem.Content = canvas;
+
+                            
+                             
                                 XElement imageElement = item.Element("image");
                                 ImageBrush imageBrush = new ImageBrush();
                                 imageBrush.ImageSource = new BitmapImage(new Uri((imageElement.Element("url").Value)));
-
+                              
                                 Image image = new Image();
-                                double imageWidth = (BackCanvas.ActualWidth - 10 * 4) / 3;
-                                double imageHeight = (BackCanvas.ActualHeight - 10 * 4) / 3;
+                                double imageWidth =  100;
+                                double imageHeight = 100;
 
                                 Button button = new Button();
                                 button.Width = imageWidth;
@@ -74,10 +95,10 @@ namespace NewInfo
                                 button.Background = imageBrush;
                                 button.Tag = count;
                                 button.Click +=button_Click;
-                                Canvas.SetLeft(button, 10 + (imageWidth + 10) * (count % 3));
-                                Canvas.SetTop(button, 10 + (imageHeight + 10) * (count / 3));
-                                BackCanvas.Children.Add(button);
-
+                                Canvas.SetLeft(button, 10);
+                                Canvas.SetTop(button,10);
+                                canvas.Children.Add(button);
+                             
 
                                 image.Width = imageWidth;
                                 image.Height = imageHeight;
@@ -89,30 +110,30 @@ namespace NewInfo
                                 TextBlock textBlock = new TextBlock();
                                 textBlock.Width = imageWidth;
                                 textBlock.Height = 40;
+                                textBlock.Width =  480 - 120;
+                                Debug.WriteLine("{0}",textBlock.Width);
                                 textBlock.Foreground = brush;
                                 textBlock.VerticalAlignment = VerticalAlignment.Center;
-                                textBlock.TextTrimming = TextTrimming.WordEllipsis;
+                                textBlock.TextWrapping = TextWrapping.Wrap;
+                               // textBlock.TextTrimming = TextTrimming.WordEllipsis;
                            
-                                Canvas.SetLeft(textBlock, 22 + (imageWidth + 10) * (count % 3));
-                                Canvas.SetTop(textBlock, (count/3+1)*(10 + imageHeight ) - textBlock.Height );
-                                BackCanvas.Children.Add(textBlock);
+                                Canvas.SetLeft(textBlock,120);
+                                Canvas.SetTop(textBlock,10);
+                                
                                 textBlock.Text = item.Element("title").Value;
                                 textBlock.FontSize = 25;
                                 textBlock.TextTrimming = TextTrimming.WordEllipsis;
+                                canvas.Children.Add(textBlock);
 
                                 Info info = new Info();
                                 info.title = item.Element("title").Value;
                                 info.imageURI = imageElement.Element("url").Value;
                                 info.desc = item.Element("description").Value;
                                 list.Add(info);
-
+                                listBox.Items.Add(listItem);
                                 count++;
-                            }
-                            else
-                            {
-                                break;
-                            }
-                            // MessageBox.Show(item.Element("title").Value);
+                            
+                            
                         }
 
 
@@ -125,35 +146,23 @@ namespace NewInfo
 
             });
 
-            // Sample code for building a localized ApplicationBar
-            //private void BuildLocalizedApplicationBar()
-            //{
-            //    // Set the page's ApplicationBar to a new instance of ApplicationBar.
-            //    ApplicationBar = new ApplicationBar();
-
-            //    // Create a new button and set the text value to the localized string from AppResources.
-            //    ApplicationBarIconButton appBarButton = new ApplicationBarIconButton(new Uri("/Assets/AppBar/appbar.add.rest.png", UriKind.Relative));
-            //    appBarButton.Text = AppResources.AppBarButtonText;
-            //    ApplicationBar.Buttons.Add(appBarButton);
-
-            //    // Create a new menu item with the localized string from AppResources.
-            //    ApplicationBarMenuItem appBarMenuItem = new ApplicationBarMenuItem(AppResources.AppBarMenuItemText);
-            //    ApplicationBar.MenuItems.Add(appBarMenuItem);
-            //}
+          
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            ((Button)sender).Visibility = Visibility.Collapsed;
+            (sender as Button).Visibility = Visibility.Collapsed;
             progressBar.Visibility = Visibility.Visible;
-            Thread thread = new Thread(begin);
-            thread.Start();
+            this.begin();
+      
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
             int tag = (int)((Button)sender).Tag;
-            PhoneApplicationService.Current.State["info"] = list[tag];
+            (Application.Current as App).info = list[tag];
+         
+           
             NavigationService.Navigate(new Uri("/DetailPage.xaml", UriKind.Relative));
         }
     }

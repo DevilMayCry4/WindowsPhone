@@ -12,6 +12,8 @@ namespace NewInfo
 {
     public partial class App : Application
     {
+        public Info info { set; get; }
+ 
         /// <summary>
         /// Provides easy access to the root frame of the Phone Application.
         /// </summary>

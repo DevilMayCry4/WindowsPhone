@@ -20,10 +20,10 @@ namespace NewInfo
         }
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {
-            Info info; //declare this before the page constructor
-           info = (Info)PhoneApplicationService.Current.State["info"];
-            
-          // MessageBox.Show(info.desc);
+            Info info;  
+            base.OnNavigatedTo(e);
+            info = (Application.Current as App).info;
+      
            titleBlock.Text = info.title;
            descBlock.Text = info.desc;
            image.Source = new BitmapImage(new Uri(info.imageURI, UriKind.RelativeOrAbsolute));
