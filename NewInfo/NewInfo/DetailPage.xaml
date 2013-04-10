@@ -12,13 +12,15 @@
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True">
-    <Canvas HorizontalAlignment="Left" Height="768" VerticalAlignment="Top" Width="480">
-        <Image Name="image" Height="236" Canvas.Left="140" Canvas.Top="50" Width="170"/>
-        <TextBlock Name="titleBlock" FontSize="30" HorizontalAlignment="Center" TextWrapping="Wrap" Text="TextBlock" Height="50" Width="460" Canvas.Left="10"/>
-        <ScrollViewer Height="482" Canvas.Top="286" Width="480">
-            <TextBlock  Name="descBlock" TextWrapping="Wrap"  FontSize="25" Text="TextBlock" Width="449"/>
-        </ScrollViewer>
-    </Canvas>
+    <ScrollViewer HorizontalAlignment="Left" Height="768" VerticalAlignment="Top" Width="480">
+        <StackPanel>
+            <TextBlock Name="titleBlock" TextWrapping="Wrap" Text="TextBlock" Width="430"/>
+            <Image Name="image" Height="157" Width="123"/>
+            <TextBlock Name="descBlock" TextWrapping="Wrap" Text="TextBlock"   Width="430"/>
+
+        </StackPanel>
+    </ScrollViewer>
+
 
 
     <!--LayoutRoot is the root grid where all page content is placed-->
