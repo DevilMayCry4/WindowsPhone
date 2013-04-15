@@ -28,10 +28,7 @@ namespace NewInfo
             InitializeComponent();
 
             progressBar.Visibility = Visibility.Collapsed;
-             
-
-            // Sample code to localize the ApplicationBar
-            //BuildLocalizedApplicationBar();
+     
         }
 
         
@@ -57,11 +54,7 @@ namespace NewInfo
                 if (e.Error == null)
                 {
                     using (System.IO.StreamReader reader = new System.IO.StreamReader(e.Result))
-                    {
-                        
-                        
-                         
-                         
+                    {                        
                         string strStream = reader.ReadToEnd();
                         progressBar.Visibility = Visibility.Collapsed;
                         ListBox listBox = new ListBox();
@@ -74,8 +67,13 @@ namespace NewInfo
                         int count = 0;
                         foreach (XElement item in element.Elements("item"))
                         {
-                            Canvas canvas = new Canvas();
-                            canvas.Height = 120;
+                            SolidColorBrush bru = new SolidColorBrush();
+                            bru.Color = Colors.Gray;
+                            StackPanel canvas = new StackPanel();
+
+                            canvas.Height = 119;
+                            canvas.Background = bru;
+                            canvas.Orientation = System.Windows.Controls.Orientation.Horizontal;
                             ListBoxItem listItem = new ListBoxItem();
                             listItem.Content = canvas;
 
@@ -88,17 +86,18 @@ namespace NewInfo
                                 Image image = new Image();
                                 double imageWidth =  100;
                                 double imageHeight = 100;
+                                image.Stretch = Stretch.UniformToFill;
                                 image.Source = new BitmapImage(new Uri((imageElement.Element("url").Value)));
                           
                                 
                                 Button button = new Button();
                                 button.Width = imageWidth;
                                 button.Height = imageHeight;
+                               
                                 button.Background = imageBrush;
                                 button.Tag = count;
                                 button.Click +=button_Click;
-                                Canvas.SetLeft(button, 10);
-                                Canvas.SetTop(button,10);
+                               
                                 canvas.Children.Add(image);
                                 
 
@@ -107,7 +106,7 @@ namespace NewInfo
                                 
 
                                 SolidColorBrush brush = new SolidColorBrush();
-                                brush.Color = Colors.Red;
+                                brush.Color = Colors.White;
 
                                 TextBlock textBlock = new TextBlock();
                                 textBlock.Width = imageWidth;
@@ -161,12 +160,9 @@ namespace NewInfo
 
         private void listBox_SelectionChanged(object sender, RoutedEventArgs e)
         {
-
-            Debug.WriteLine("{0}", (sender as ListBox).SelectedIndex);
-            int tag = (sender as ListBox).SelectedIndex;
+            ListBox box = (ListBox)sender;
+            int tag = box.SelectedIndex;
             (Application.Current as App).info = list[tag];
-
-
             NavigationService.Navigate(new Uri("/DetailPage.xaml", UriKind.Relative));
         }
 
@@ -174,8 +170,6 @@ namespace NewInfo
         {
             int tag = (int)((Button)sender).Tag;
             (Application.Current as App).info = list[tag];
-         
-           
             NavigationService.Navigate(new Uri("/DetailPage.xaml", UriKind.Relative));
         }
     }
