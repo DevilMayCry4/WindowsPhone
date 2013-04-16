@@ -58,7 +58,7 @@
     								<CompositeTransform/>
     							</Image.RenderTransform>
     						</Image>
-    						<TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="131,7,0,0" TextWrapping="Wrap" Text="{TemplateBinding text}" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2" FontSize="29.333">
+    						<TextBlock x:Name="textBlock" MaxHeight="80" HorizontalAlignment="Left" Margin="131,7,0,0" TextWrapping="Wrap" Text="{TemplateBinding text}" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2" FontSize="29.333">
     							<TextBlock.RenderTransform>
     								<CompositeTransform/>
     							</TextBlock.RenderTransform>
