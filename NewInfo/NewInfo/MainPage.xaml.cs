@@ -14,6 +14,7 @@ using System.Threading;
 using System.Windows.Media;
 using NewInfo;
 using System.Diagnostics;
+using CustomButton;
 
 namespace NewInfo
 {
@@ -60,72 +61,28 @@ namespace NewInfo
                         ListBox listBox = new ListBox();
                         Content = listBox;
                         
-                        listBox.SelectionChanged +=listBox_SelectionChanged;
+                       
 
 
                         XElement element = XElement.Parse(strStream);
                         int count = 0;
                         foreach (XElement item in element.Elements("item"))
                         {
-                            SolidColorBrush bru = new SolidColorBrush();
-                            bru.Color = Colors.Gray;
-                            StackPanel canvas = new StackPanel();
-
-                            canvas.Height = 119;
-                            canvas.Background = bru;
-                            canvas.Orientation = System.Windows.Controls.Orientation.Horizontal;
-                            ListBoxItem listItem = new ListBoxItem();
-                            listItem.Content = canvas;
-
-                            
                              
-                                XElement imageElement = item.Element("image");
-                                ImageBrush imageBrush = new ImageBrush();
-                                imageBrush.ImageSource = new BitmapImage(new Uri((imageElement.Element("url").Value)));
-                              
-                                Image image = new Image();
-                                double imageWidth =  100;
-                                double imageHeight = 100;
-                                image.Stretch = Stretch.UniformToFill;
-                                image.Source = new BitmapImage(new Uri((imageElement.Element("url").Value)));
-                          
-                                
-                                Button button = new Button();
-                                button.Width = imageWidth;
-                                button.Height = imageHeight;
-                               
-                                button.Background = imageBrush;
-                                button.Tag = count;
-                                button.Click +=button_Click;
-                               
-                                canvas.Children.Add(image);
-                                
 
-                                image.Width = imageWidth;
-                                image.Height = imageHeight;
-                                
+                            XElement imageElement = item.Element("image");
+                            
+                            MyButton myButton = new MyButton();
+                            myButton.imageSource = new BitmapImage(new Uri((imageElement.Element("url").Value)));
+                            myButton.text = item.Element("title").Value;
+                            myButton.Width = 480;
+                            myButton.Height = 120;
+                            myButton.Tag = count;
+                            myButton.Click += button_Click;
 
-                                SolidColorBrush brush = new SolidColorBrush();
-                                brush.Color = Colors.White;
-
-                                TextBlock textBlock = new TextBlock();
-                                textBlock.Width = imageWidth;
-                                textBlock.Height = 40;
-                                textBlock.Width = 480 - 120;
-                                Debug.WriteLine("{0}",textBlock.Width);
-                                textBlock.Foreground = brush;
-                                textBlock.VerticalAlignment = VerticalAlignment.Center;
-                                textBlock.TextWrapping = TextWrapping.Wrap;
-                               // textBlock.TextTrimming = TextTrimming.WordEllipsis;
-                           
-                                Canvas.SetLeft(textBlock,120);
-                                Canvas.SetTop(textBlock,10);
-                                
-                                textBlock.Text = item.Element("title").Value;
-                                textBlock.FontSize = 25;
-                                textBlock.TextTrimming = TextTrimming.WordEllipsis;
-                                canvas.Children.Add(textBlock);
-
+                            ListBoxItem listItem = new ListBoxItem();
+                            listItem.Content = myButton;
+  
                                 Info info = new Info();
                                 info.title = item.Element("title").Value;
                                 info.imageURI = imageElement.Element("url").Value;
@@ -158,17 +115,12 @@ namespace NewInfo
       
         }
 
-        private void listBox_SelectionChanged(object sender, RoutedEventArgs e)
-        {
-            ListBox box = (ListBox)sender;
-            int tag = box.SelectedIndex;
-            (Application.Current as App).info = list[tag];
-            NavigationService.Navigate(new Uri("/DetailPage.xaml", UriKind.Relative));
-        }
+         
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            int tag = (int)((Button)sender).Tag;
+            Button box = (Button)sender;
+            int tag =(int)box.Tag;
             (Application.Current as App).info = list[tag];
             NavigationService.Navigate(new Uri("/DetailPage.xaml", UriKind.Relative));
         }

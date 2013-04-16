@@ -1,12 +1,12 @@
-﻿<xapCache source="C:\Users\virgil\Documents\GitHub\WindowsPhone\NewInfo\NewInfo\Bin\Debug\NewInfo_Debug_AnyCPU.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="2013/4/15 13:54:02">
-  <file source="C:\Users\virgil\Documents\GitHub\WindowsPhone\NewInfo\NewInfo\obj\Debug\NewInfo.dll" archivePath="NewInfo.dll" lastWriteTime="2013/4/15 13:54:02" />
+﻿<xapCache source="C:\Users\virgil\Documents\GitHub\WindowsPhone\NewInfo\NewInfo\Bin\Debug\NewInfo_Debug_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="2013/4/16 17:02:22">
+  <file source="C:\Users\virgil\Documents\GitHub\WindowsPhone\NewInfo\NewInfo\obj\Debug\NewInfo.dll" archivePath="NewInfo.dll" lastWriteTime="2013/4/16 17:02:21" />
   <file source="C:\Users\virgil\Documents\GitHub\WindowsPhone\NewInfo\NewInfo\Assets\AlignmentGrid.png" archivePath="Assets\AlignmentGrid.png" lastWriteTime="2013/3/28 17:14:32" />
   <file source="C:\Users\virgil\Documents\GitHub\WindowsPhone\NewInfo\NewInfo\Assets\Tiles\FlipCycleTileLarge.png" archivePath="Assets\Tiles\FlipCycleTileLarge.png" lastWriteTime="2013/3/28 17:14:32" />
   <file source="C:\Users\virgil\Documents\GitHub\WindowsPhone\NewInfo\NewInfo\Assets\Tiles\FlipCycleTileSmall.png" archivePath="Assets\Tiles\FlipCycleTileSmall.png" lastWriteTime="2013/3/28 17:14:32" />
   <file source="C:\Users\virgil\Documents\GitHub\WindowsPhone\NewInfo\NewInfo\Assets\Tiles\IconicTileMediumLarge.png" archivePath="Assets\Tiles\IconicTileMediumLarge.png" lastWriteTime="2013/3/28 17:14:32" />
   <file source="C:\Users\virgil\Documents\GitHub\WindowsPhone\NewInfo\NewInfo\Assets\Tiles\IconicTileSmall.png" archivePath="Assets\Tiles\IconicTileSmall.png" lastWriteTime="2013/3/28 17:14:32" />
-  <file source="C:\Users\virgil\Documents\GitHub\WindowsPhone\NewInfo\NewInfo\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="2013/3/28 17:14:42" />
+  <file source="C:\Users\virgil\Documents\GitHub\WindowsPhone\NewInfo\NewInfo\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="2013/4/16 16:24:29" />
   <file source="C:\Users\virgil\Documents\GitHub\WindowsPhone\NewInfo\NewInfo\Bin\Debug\Assets\ApplicationIcon.png" archivePath="Assets\ApplicationIcon.png" lastWriteTime="2013/3/28 17:14:32" />
   <file source="C:\Users\virgil\Documents\GitHub\WindowsPhone\NewInfo\NewInfo\Bin\Debug\Assets\Tiles\FlipCycleTileMedium.png" archivePath="Assets\Tiles\FlipCycleTileMedium.png" lastWriteTime="2013/3/28 17:14:32" />
-  <file source="C:\Users\virgil\Documents\GitHub\WindowsPhone\NewInfo\NewInfo\Bin\Debug\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="2013/3/28 17:14:42" />
+  <file source="C:\Users\virgil\Documents\GitHub\WindowsPhone\NewInfo\NewInfo\Bin\Debug\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="2013/4/16 16:24:29" />
 </xapCache>

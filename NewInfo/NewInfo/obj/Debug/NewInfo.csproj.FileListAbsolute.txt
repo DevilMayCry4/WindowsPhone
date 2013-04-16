@@ -7,14 +7,15 @@ C:\Users\virgil\Documents\GitHub\WindowsPhone\NewInfo\NewInfo\Bin\Debug\Assets\T
 C:\Users\virgil\Documents\GitHub\WindowsPhone\NewInfo\NewInfo\Bin\Debug\NewInfo.dll
 C:\Users\virgil\Documents\GitHub\WindowsPhone\NewInfo\NewInfo\Bin\Debug\NewInfo.pdb
 C:\Users\virgil\Documents\GitHub\WindowsPhone\NewInfo\NewInfo\Bin\Debug\AppManifest.xaml
+C:\Users\virgil\Documents\GitHub\WindowsPhone\NewInfo\NewInfo\Bin\Debug\Properties\WMAppManifest.xml
 C:\Users\virgil\Documents\GitHub\WindowsPhone\NewInfo\NewInfo\Bin\Debug\NewInfo_Debug_AnyCPU.xap
 C:\Users\virgil\Documents\GitHub\WindowsPhone\NewInfo\NewInfo\obj\Debug\App.g.cs
+C:\Users\virgil\Documents\GitHub\WindowsPhone\NewInfo\NewInfo\obj\Debug\DetailPage.g.cs
 C:\Users\virgil\Documents\GitHub\WindowsPhone\NewInfo\NewInfo\obj\Debug\MainPage.g.cs
+C:\Users\virgil\Documents\GitHub\WindowsPhone\NewInfo\NewInfo\obj\Debug\Page1.g.cs
 C:\Users\virgil\Documents\GitHub\WindowsPhone\NewInfo\NewInfo\obj\Debug\NewInfo.g.resources
 C:\Users\virgil\Documents\GitHub\WindowsPhone\NewInfo\NewInfo\obj\Debug\NewInfo.Resources.AppResources.resources
 C:\Users\virgil\Documents\GitHub\WindowsPhone\NewInfo\NewInfo\obj\Debug\NewInfo.csproj.GenerateResource.Cache
 C:\Users\virgil\Documents\GitHub\WindowsPhone\NewInfo\NewInfo\obj\Debug\NewInfo.dll
 C:\Users\virgil\Documents\GitHub\WindowsPhone\NewInfo\NewInfo\obj\Debug\NewInfo.pdb
 C:\Users\virgil\Documents\GitHub\WindowsPhone\NewInfo\NewInfo\obj\Debug\XapCacheFile.xml
-C:\Users\virgil\Documents\GitHub\WindowsPhone\NewInfo\NewInfo\obj\Debug\DetailPage.g.cs
-C:\Users\virgil\Documents\GitHub\WindowsPhone\NewInfo\NewInfo\obj\Debug\Page1.g.cs
