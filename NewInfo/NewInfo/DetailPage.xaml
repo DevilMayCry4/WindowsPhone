@@ -6,18 +6,21 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:cutmo="clr-namespace:Phone.Controls"
+    xmlns:MY="clr-namespace:NewInfo"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True">
-    <ScrollViewer HorizontalAlignment="Left" Height="768" VerticalAlignment="Top" Width="480">
-        <StackPanel>
-            <TextBlock Name="titleBlock" TextWrapping="Wrap" Text="TextBlock" Width="430"/>
-            <Image Name="image" Height="157" Width="123"/>
-            <TextBlock Name="descBlock" TextWrapping="Wrap" Text="TextBlock"   Width="430"/>
 
+    
+    <ScrollViewer HorizontalAlignment="Left" Height="768" VerticalAlignment="Top" Width="480">
+        <StackPanel  >
+            <TextBlock Name="titleBlock" FontSize="24" TextWrapping="Wrap"  HorizontalAlignment="Center" Text="{Binding Title}"/>
+            <Image Name="image" Height="157" Width="123"  Source="{Binding url}"  Margin="0,4"/>
+            <cutmo:ScrollableTextBlock Name="descBlock" Foreground="White" FontSize="24" IsHitTestVisible="False" Width="Auto" Height="Auto"    />
         </StackPanel>
     </ScrollViewer>
 

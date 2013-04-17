@@ -16,3 +16,4 @@ C:\Users\virgil\Documents\GitHub\WindowsPhone\Binding\Binding\obj\Debug\Binding.
 C:\Users\virgil\Documents\GitHub\WindowsPhone\Binding\Binding\obj\Debug\Binding.dll
 C:\Users\virgil\Documents\GitHub\WindowsPhone\Binding\Binding\obj\Debug\Binding.pdb
 C:\Users\virgil\Documents\GitHub\WindowsPhone\Binding\Binding\obj\Debug\XapCacheFile.xml
+C:\Users\virgil\Documents\GitHub\WindowsPhone\Binding\Binding\Bin\Debug\Properties\WMAppManifest.xml
