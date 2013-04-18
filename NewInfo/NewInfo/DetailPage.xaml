@@ -20,7 +20,7 @@
         <StackPanel  >
             <TextBlock Name="titleBlock" FontSize="24" TextWrapping="Wrap"  HorizontalAlignment="Center" Text="{Binding Title}"/>
             <Image Name="image" Height="157" Width="123"  Source="{Binding url}"  Margin="0,4"/>
-            <cutmo:ScrollableTextBlock Name="descBlock" Foreground="White" FontSize="24" IsHitTestVisible="False" Width="Auto" Height="Auto"    />
+            <cutmo:ScrollableTextBlock Name="descBlock" Foreground="White" FontSize="24" IsHitTestVisible="False" Width="Auto" Height="Auto" Margin="20,0"    />
         </StackPanel>
     </ScrollViewer>
 
